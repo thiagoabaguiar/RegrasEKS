@@ -17,8 +17,17 @@ public class RegrasEKS {
         double numeroMinimoNodes = Math.ceil((double) numeroTotalPods / (double) podsPorNode);
         double numeroMinimoServidores = Math.ceil((double) numeroTotalPods / (double) podsPorServidor);
 
-        System.out.println("Nodes necessários: " + String.format("%.0f", numeroMinimoNodes));
-        System.out.println("Servidores necessários: " + String.format("%.0f", numeroMinimoServidores));
+        if (numeroMinimoNodes <= 1) {
+            System.out.println("Recomendamos usar um unico node");
+        } else {
+            System.out.println("Nodes necessários: " + String.format("%.0f", numeroMinimoNodes));
+        }
+
+        if (numeroMinimoServidores <= 1) {
+            System.out.println("Recomendamos usar um unico servidor");
+        } else {
+            System.out.println("Servidores necessários: " + String.format("%.0f", numeroMinimoServidores));
+        }
 
     }
 }
